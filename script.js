@@ -11,7 +11,7 @@ buyBtn.addEventListener("click", async () => {
 
     try {
 
-        const response = await fetch("YOUR_RENDER_BACKEND_URL/pay", {
+        const response = await fetch("https://kcse-backend-an26.onrender.com", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #081120;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background: #101b2d;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h1 {
+    color: gold;
+    font-size: 32px;
+}
+
+.desc {
+    color: #d4d4d4;
+    line-height: 1.6;
+}
+
+.price-box {
+    background: #16263f;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.price-box h2 {
+    color: #00ff88;
+    font-size: 40px;
+    margin: 0;
+}
+
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #00c853;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00e676;
+}
+
+.features {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.features h3 {
+    color: gold;
+}
+
+.features ul {
+    padding-left: 20px;
+}
+
+.features li {
+    margin-bottom: 10px;
+}

@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios");
 require("dotenv").config();
 
 const app = express();
@@ -8,38 +7,28 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const consumerKey = process.env.PESAPAL_CONSUMER_KEY;
-const consumerSecret = process.env.PESAPAL_CONSUMER_SECRET;
-
 app.get("/", (req, res) => {
     res.send("KCSE Backend Running");
 });
 
 app.post("/pay", async (req, res) => {
 
-    const { phone } = req.body;
-
     try {
 
-        const paymentData = {
-            amount: 50,
-            currency: "KES",
-            description: "KCSE Prediction Payment",
-            phone_number: phone
-        };
+        const { phone } = req.body;
 
-        console.log(paymentData);
+        console.log("PHONE:", phone);
 
-        res.json({
+        res.status(200).json({
             success: true,
             message: "STK Push Sent Successfully"
         });
 
     } catch (error) {
 
-        console.log(error.message);
+        console.log(error);
 
-        res.json({
+        res.status(500).json({
             success: false,
             message: "Payment Failed"
         });

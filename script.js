@@ -1,29 +1,33 @@
 const buyBtn = document.getElementById("buyBtn");
 
-buyBtn.addEventListener("click", async () => {
+buyBtn.onclick = async function () {
 
-    const phone = prompt("Enter M-PESA Number");
+    const phone = prompt("Enter Phone Number");
 
     if (!phone) {
-        alert("Phone number required");
+        alert("Enter phone number");
         return;
     }
 
     try {
 
-        const response = await fetch("https://kcse-backend-an26.onrender.com", {
+        const response = await fetch("https://kcse-backend-an26.onrender.com/pay", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ phone })
+            body: JSON.stringify({
+                phone: phone
+            })
         });
 
-        const data = await response.json();
+        const text = await response.text();
 
-        alert(data.message);
+        alert(text);
 
-    } catch (error) {
+    } catch (err) {
+
         alert("Server Error");
+        console.log(err);
     }
-});
+};
